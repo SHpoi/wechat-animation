@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">  
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>HTML页面编辑手机端预览测试</title>  
+	<link rel="stylesheet" type="text/css" href="css/easyui.css"> 
+	<link rel="stylesheet" type="text/css" href="css/mobile.css">  
+	<link rel="stylesheet" type="text/css" href="css/icon.css">  
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>  
+	<script type="text/javascript" src="js/jquery.easyui.min.js"></script> 
+	<script type="text/javascript" src="js//jquery.easyui.mobile.js"></script>
+	<style type="text/css">
+		.device{
+			width: 400px;
+			height: 760px;
+			margin:10px 0 0 170px;
+			background:url('img/phone.png') no-repeat;
+			position:relative;
+		}
+		.demo-wrap{
+			position:absolute;
+			width:322px;
+			height:482px;
+			background: #ccc;
+			top:117px;
+			left:23px;
+		}
+	</style>
+</head>
+<body>
+	<div class="device">
+		<div class="demo-wrap">
+			<div class="easyui-navpanel" data-options="href:'_content.html'" style="padding:10px">
+				<header>
+					<div class="m-toolbar">
+						<div class="m-title">页面预览效果</div>
+					</div>
+				</header>
+				<footer>
+					<div class="m-toolbar">
+						<div class="m-title">xxxx系统</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+	</div>
+</body>	
+</html>

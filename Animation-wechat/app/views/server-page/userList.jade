@@ -1,0 +1,16 @@
+.module
+  .module-header
+    h5.h-header.h5-header.border-green 用户列表
+  .module-con
+    .form-search.animation-list-search#userSearch
+      input.form-input(placeholder='请输入昵称或者openid', type='text')
+      i.iconfont.icon-sousuo1
+    .table-wrap
+      .table-con
+          table#y1table2.datatable.table-box
+script(type='text/javascript', src='/server-js/pages.js')
+script.
+      $(function(){
+          $('.nav>div>a').eq(2).addClass('active').parent().siblings().children('a').removeClass('active');
+      })
+script(type='text/javascript' src="/server-js/getUserList.js")

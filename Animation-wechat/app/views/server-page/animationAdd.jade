@@ -1,0 +1,89 @@
+//extends ./index
+
+//block content
+.module
+.module-header
+    h5.h-header.h5-header.border-green 
+        if _id
+            | 动漫修改
+        else
+            | 动漫录入     
+.module-con
+    p.formtip 
+        |1.海报和上传图片共存时以预览图为准 <br /> 2.双击标签会取消该标签
+    form.form-group(method="post", action="", enctype="multipart/form-data")
+        input#animationId(type='text' name='_id' hidden value=_id)
+        .form-column.form-column-4
+            div
+                label(for='title') 动漫名字
+                input#title.form-input(type='text' name='title' value=title)
+            div
+                button.btn.btn-warning.btn-small.douban(type='button') 豆瓣同步
+        .form-column.form-column-1(style="height: 45px;")
+            div.tagdiv
+                label 标签
+                - if(tag){
+                - var colors = ['#72e9f9', '#2196f3', '#ff5722', '#ff9800', '#cddc39', '#009688', '#8ad0c9', '#f8ac59'];
+                -  for(var i=0;i<tag.length;i++){
+                button.btn.btn-small(type="button" style="background:#{colors[i]}") #{tag[i]}
+                -  }
+                -}
+                i.icon.iconfont.icon-roundadd
+                input#addnewTag(type='text' style="display:none;")
+        .form-column.form-column-4
+            div
+                label(for='director') 导演
+                input#director.form-input(type='text' name='director' value=director)
+        .form-column.form-column-4
+            div
+                label(for='country') 国家
+                input#country.form-input(type='text' name='country' value=country)
+        .form-column.form-column-4
+            div
+                label(for='language') 语言
+                input#language.form-input(type='text' name='language' value=language)
+        .form-column.form-column-4
+            div
+                label(for='year') 年代
+                input#year.form-input(type='text' name='year' value=year)
+        .form-column.form-column-4
+            div
+                label(for='rating') 豆瓣评分
+                input#rating.form-input(type='text' name='doubanRating' value=rating)
+        .form-column.form-column-4
+            div
+                label(for='uploadPoster') 上传海报
+                input#uploadPoster(type='file', name='uploadPoster')
+        .form-column.form-column-2
+            div
+                label(for='poster') 海报地址
+                input#poster.form-input(type='text' name='poster' value=poster)
+        .form-column.form-column-2
+            - if(poster){
+            img#loadpic(src="#{'/upload/'+poster}")
+            - }else{
+            img#loadpic(src="/img/nonePic.jpg")
+            - }
+        .form-column.form-column-2
+            div
+                h5.h-header.h4-header.animation-form-h4 集数资源
+                button.btn.btn-small.btn-primary.animation-es-add(type='button') 新增地址
+                - if(episodeList){
+                -   for(var j=0;j<episodeList.length;j++){
+                .form-column.form-column-2.animation-es-list
+                    label.animation-es-label(for="form1")  #{j+1}
+                    input.form-input.animation-es-input(type="text" value=episodeList[j])     
+                -   }
+                - }       
+        .form-column.form-column-2
+            div
+                label(for='summary') 电影简介
+                textarea#summary.form-textarea(name='', cols='30', rows='10') 
+                    if summary
+                        | #{summary}
+                    else
+                        | 暂无简介
+        div
+            button.btn.btn-info.js-add(type='button') 录入
+script(type='text/javascript', src='/server-js/animationAdd.js')
+        

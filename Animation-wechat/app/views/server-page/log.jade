@@ -1,0 +1,29 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title 登录页
+    link(rel='stylesheet', href='/fonts/iconfont.css')
+    link(rel='stylesheet', type='text/css', href='/server-css/log.css')
+  body
+    .backdrop-img
+      .land-content
+        p.land-ad 漫迷微信公众号登录页
+        .register-content
+          .login-modularity
+            .entry-message
+              .save-icon.iconfont.icon-account
+              input.js-log-user(type='text', placeholder='用户名')
+            span.user-warning-u
+              // 请输入正确用户名
+          .login-modularity
+            .entry-message
+              .save-icon.iconfont.icon-suo
+              input.js-log-pass(type='password', placeholder='密码')
+            span.user-warning-p
+              // 请输入正确密码
+          .circle-button.clearfix
+            button.fl.js-log 登陆
+    script(type='text/javascript', src='/server-js/jquery-1.10.2.min.js')
+    script(type='text/javascript', src='/server-js/common.js')
+    script(type='text/javascript', src='/server-js/log.js')

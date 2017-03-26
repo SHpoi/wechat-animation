@@ -1,0 +1,346 @@
+/*--css 初始化-- */
+
+a,
+address,
+b,
+big,
+blockquote,
+body,
+center,
+cite,
+code,
+dd,
+del,
+div,
+dl,
+dt,
+em,
+fieldset,
+font,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+i,
+iframe,
+img,
+ins,
+label,
+legend,
+li,
+ol,
+p,
+pre,
+small,
+span,
+strong,
+u,
+ul,
+var,
+button,
+input,
+textarea {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset,
+img,
+input,
+button {
+    border: none;
+    outline-style: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+input {
+    font-family: "Helvetica", " Microsoft YaHei";
+    font-size: 14px;
+}
+
+select,
+input {
+    vertical-align: middle;
+}
+
+select,
+input,
+textarea {
+    font-size: 14px;
+}
+
+
+/*--防止拖动--*/
+
+textarea {
+    resize: none;
+}
+
+
+/*--去掉图片低测默认的3像素空白缝隙--*/
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+s,
+i,
+em {
+    font-style: normal;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/*--解决button在firefox下文字不能上下居中的问题--*/
+
+button::-moz-focus-inner {
+    margin: 0;
+    padding: 0px 0 2px;
+    border: none;
+}
+
+body {
+    font-family: "Helvetica", " Microsoft YaHei";
+    font-size: 14px;
+    color: #666;
+    background-color: #f3f3f4;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
+/*--清除浮动--*/
+
+.clearfix,
+.col-wrap {
+    *+height: 1%;
+}
+
+.clearfix:after,
+.col-wrap:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+
+/* 登录页面 */
+
+html,
+body {
+    height: 100%;
+}
+
+.backdrop-img {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    width: 100%;
+    height: 100%;
+    background-image: url("/img/logbg.jpg");
+    background-size: cover;
+}
+
+.logo-img {
+    display: block;
+    margin: 0 auto;
+}
+
+.land-content {
+    margin: 30px auto 0;
+    padding: 30px;
+    width: 450px;
+    height: auto;
+    background-color: #fff;
+}
+
+.land-ad {
+    padding-bottom: 20px;
+    font-size: 18px;
+    font-weight: bolder;
+    color: #5a92cb;
+    border-bottom: 1px solid #689cd5;
+    text-align: center;
+}
+
+.register-content {
+    position: relative;
+    padding-right: 110px;
+    width: 100%;
+    height: auto;
+}
+
+.logio-text {
+    position: absolute;
+    top: 20px;
+    left: 60px;
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    font-weight: bolder;
+    color: #DEDEDE;
+}
+
+.login-modularity {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    padding-bottom: 10px;
+}
+
+.forget-message {
+    padding-bottom: 6px;
+    width: 100%;
+    height: auto;
+    color: #33B88E;
+    text-align: right;
+    font-size: 12px;
+}
+
+.entry-message {
+    position: relative;
+    padding-left: 40px;
+    width: 100%;
+    height: auto;
+    background-color: #5a92cb;
+}
+
+.entry-message input {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+    background-color: #5a92cb;
+}
+
+.save-icon {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    padding-left: 11px;
+    width: 40px;
+    height: 22px;
+    border-right: 1px solid #4A4A4E;
+    line-height: 22px;
+}
+
+::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #626368;
+}
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #626368;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #626368;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #626368;
+    ;
+}
+
+.circle-button {
+    height: 95px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 95px;
+}
+
+.circle-button button {
+    width: 100%;
+    height: 100%;
+    line-height: 36px;
+    background-color: #5a92cb;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+    cursor: pointer;
+}
+
+.circle-button button a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.circle-button button:hover {
+    background-color: #F76A0C;
+}
+
+.circle-button button:hover {
+    border-color: #2ca8b8;;
+    color: #fff;
+    background-color: #2ca8b8;;
+}
+
+.circle-button button:active {
+    border-color: #2ca8b8;;
+    color: #fff;
+    background-color: #2ca8b8;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+
+/* 登录页面 */
+
+.user-warning-u,
+.user-warning-p {
+    position: absolute;
+    font-size: 12px;
+    line-height: 22px;
+    color: #2196F3;
+}

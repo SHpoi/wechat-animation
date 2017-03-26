@@ -1,0 +1,13 @@
+/**---added by sunqixiong---以下只为测试自己可随意定义样式---**/
+.dropdwon-radio .iconfont,.dropdwon-checkbox .iconfont{
+	font-size: 12px;
+}
+.dropdwon-checkbox .showItem{
+  margin-left: 3px;
+  margin-right: 3px;
+  padding: 3px;
+  color: #000;
+}
+.dropdwon-checkbox .icon-cuowu{
+	cursor: pointer;
+}

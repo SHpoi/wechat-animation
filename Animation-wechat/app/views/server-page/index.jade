@@ -1,0 +1,88 @@
+doctype html
+html(lang='zh-CH')
+  head
+    meta(charset='UTF-8')
+    title 首页
+    link(rel='stylesheet', href='/server-css/basic.css')
+    link(rel='stylesheet', href='/server-css/style.css')
+    link(rel='stylesheet', href='/fonts/iconfont.css')
+    script(src='/server-js/jquery-1.10.2.min.js')
+    script(src='/server-js/sideBar.js')
+    script(src='/server-js/alert.js')
+  body
+    .wrapper
+      .header.header-large.header-bg.clearfix
+        .logo
+          p.logo-name 漫迷后台管理系统
+        .header-in
+          p.user
+            i.iconfont.icon-geren
+            |  #{name}
+          p.exit
+            i.iconfont.icon-tuichu
+            |  退出
+      .movable
+        .fixed-nav
+          .nav
+            div
+              a.active(href="javascript:void(0)" target='/admin/inputNewAnimation')
+                i.iconfont.icon-tongji
+                p 动漫录入
+            div
+              a(href="javascript:void(0)" target='/admin/animationList')
+                i.iconfont.icon-tongji
+                p 动漫列表查询
+            div
+              a(href="javascript:void(0)" target='/admin/userList')
+                i.iconfont.icon-tongji
+                p 用户管理
+        .movable-con
+    .mask
+      .alert.alert-small.alert-del
+        .alert-header
+          h6.h-header.h6-header.sign-title 我是弹窗标题
+          i.iconfont.icon-iconcha.alert-close
+        .alert-con
+          p.text50 确认删除吗？
+        .alert-bottom.text-right
+          button.btn.btn-success 确定
+          button.btn.btn-danger 取消    
+      .alert.alert-small.alert-input
+        .alert-header
+          h6.h-header.h6-header.sign-title 标签录入
+          i.iconfont.icon-iconcha.alert-close
+        .alert-con
+          p.text50 
+            input#insertTag(type='text' placeholder="请输入标签")
+        .alert-bottom.text-right
+          button.btn.btn-success 确定
+          button.btn.btn-danger 取消   
+    script.
+      $(function(){
+        //初始化录入
+        $.ajax({
+          url:'/admin/inputNewAnimation',
+          dataType:'html',
+          success:function(data){
+            $('.movable-con').html(data)
+          }
+        })
+        $('.nav >div > a').unbind().click(function(){
+          $.ajax({
+            url:$(this).attr('target'),
+            dataType:'html',
+            success:function(data){
+              $('.movable-con').html(data)
+            }
+          })
+        })
+        $('.exit').unbind().click(function(){
+          $.post('/user/logout',function(data){
+            if(data.code==200){
+              window.location.href='/user/login';
+            }
+          })
+        })
+      })
+      
+    

@@ -1,0 +1,18 @@
+.module
+  .module-header
+    h5.h-header.h5-header.border-green 资源列表
+  .module-con
+    .form-search.animation-list-search
+      input.form-input(placeholder='我是纯纯的搜索框,不加糖', type='text')
+      i.iconfont.icon-sousuo1
+    .table-wrap
+      .table-con
+          table#y1table1.datatable.table-box
+script(type='text/javascript', src='/server-js/pages.js')
+script.
+      $(function(){
+          $('.nav>div>a').eq(1).addClass('active').parent().siblings().children('a').removeClass('active');
+      })
+script(type='text/javascript' src="/server-js/getAnimationList.js")
+
+
